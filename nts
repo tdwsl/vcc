@@ -1,0 +1,11 @@
+
+keep it simple to start
+no structs, just primitives
+maybe no function types?
+
+for optimizing:
+go through code, identify lvals
+if consecutive duplicates, insert dup, remove duplicate
+to avoid jumps being a problem, each jump is encoded as jmp n, not jmp addr
+jmp -n to encode labels?
+

@@ -1,0 +1,128 @@
+
+0x add #s4
+10 xx xx rel #s16
+11 xx xx alloca #s16
+12 alloca
+13 ret (tos)
+14 call
+15 getr
+16 setr
+17 xx lit #s8
+18 xx xx lit #s16
+19 xx xx xx xx lit #32
+1a inv
+1b neg
+1c not
+1d dup
+1e tuck
+1f xx sys #u8
+20 add
+21 sub
+22 and
+23 or
+24 xor
+25 asr
+26 lsr
+27 lsl
+28 mul
+29 div
+2a udiv
+2b rem
+2c urem
+2d eq
+2e lt
+2f ltu
+30 ldw
+31 ldh
+32 ldb
+33 ldhu
+34 ldbu
+35 stw
+36 sth
+37 stb
+38 copy (l2r)
+39 xx copy #u8
+3a xx add #s8
+3b xx and #u8
+3c xx or #u8
+3d xx mul #u8
+40 ldd
+41 std
+42 exw
+43 nip
+44 addl
+45 subl
+46 andl
+47 orl
+48 xorl
+49 asrl
+4a lsrl
+4b lsll
+4c mull
+4d divl
+4e udivl
+4f reml
+50 ureml
+51 eql
+52 ltl
+53 ltul
+54 invl
+55 negl
+56 notl
+60 float
+61 int
+62 floor
+63 addf
+64 subf
+65 mulf
+66 divf
+67 remf
+68 cos
+69 sin
+6a tan (idk math, ops may change)
+6b acos
+6c asin
+6d atan
+6e atan2
+6f pow
+9x lsl #u4
+ax xx ret #u12
+bx xx xx j #20
+cx xx xx jz #20
+dx xx xx jnz #20
+ex xx xx lit #20
+fx xx xx call #20
+
+stw is  a 10 !  not  10 a !
+args are pushed in reverse order
+
+ldw a : add 1 : stw a
+xx xx xx : xx : xx xx xx
+rel a : dup : ldw : add 1 : wts
+xx xx xx : xx : xx : xx : xx
+
+rel a : dup : ldw : add 1 : swap : stw
+
+rel big : top : 
+
+a++
+
+rel a : dup : ldw : tuck : add 1 : stw
+
+
+a() && b()
+
+lit 0 xx
+call a xxx
+getr x
+jz l0 xxx
+call b xxx
+getr x
+jz l0 xxx
+not x
+not:
+
+a < b
+rel a
+
+
